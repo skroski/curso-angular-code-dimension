@@ -1,15 +1,17 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component } from '@angular/core';
 import { Header } from './components/header/header';
-// Import the Material button module
-import { MatButtonModule } from '@angular/material/button';
+import { RouterOutlet } from '@angular/router';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-layout',
-  imports: [Header, MatButtonModule],
+  standalone: true,
+  imports: [
+    Header,
+    RouterOutlet,
+    MatSidenavModule,
+  ],
   templateUrl: './layout.html',
-  styleUrl: './layout.scss',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  styleUrls: ['./layout.scss'],
 })
-export class Layout {
-
-}
+export class Layout {}
